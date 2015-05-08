@@ -27,6 +27,12 @@ CameraCtrl.prototype.getCamera = function() {
   return this._camera;
 };
 
+CameraCtrl.prototype.update = function(time) {
+  var x = Math.cos(time * 0.01) * 500;
+  var z = Math.sin(time * 0.01) * 500;
+  this._camera.position.set(x, 0, z);
+}
+
 CameraCtrl.options = {
   fieldOfView: 35,
   aspectRatio: $(window).width()/$(window).height(),
@@ -35,7 +41,7 @@ CameraCtrl.options = {
   initPos: {
     x: 0,
     y: 0,
-    z: 300
+    z: 500
   }
 };
 

@@ -7,8 +7,8 @@ var LightCtrl = function() {
   this._lights = [];
 
   // TEMP
-  var light = new THREE.PointLight( 0xFFFF00 );
-  light.position.set( 10, 50, 130 );
+  var light = new THREE.PointLight( 0xFFFFFF );
+  light.position.set( 0, 0, 500 );
   SceneCtrl.add( light );
 };
 
