@@ -7,11 +7,13 @@ var RenderCtrl = require('./controllers/render');
 var LightCtrl = require('./controllers/light');
 var MeshCtrl = require('./controllers/mesh');
 
-$(document.body).ready(function() {
-  this._renderCtrl = new RenderCtrl();
-  this._renderer = this._renderCtrl.getRenderer();
-  this._light = new LightCtrl();
-  this._mesh = new MeshCtrl();
+var Picker = require('./services/picker');
 
-  this._renderCtrl.update();
+$(document.body).ready(function() {
+  this._renderer = RenderCtrl.getRenderer();
+  this._light = new LightCtrl();
+  this._mesh = MeshCtrl;
+  this._picker = new Picker();
+
+  RenderCtrl.update();
 });
